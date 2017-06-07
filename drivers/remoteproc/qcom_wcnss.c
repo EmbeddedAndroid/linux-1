@@ -153,7 +153,8 @@ static int wcnss_load(struct rproc *rproc, const struct firmware *fw)
 	struct qcom_wcnss *wcnss = (struct qcom_wcnss *)rproc->priv;
 
 	return qcom_mdt_load(wcnss->dev, fw, rproc->firmware, WCNSS_PAS_ID,
-			     wcnss->mem_region, wcnss->mem_phys, wcnss->mem_size);
+			     wcnss->mem_region, wcnss->mem_phys,
+			     wcnss->mem_size, &wcnss->mem_reloc);
 }
 
 static const struct rproc_fw_ops wcnss_fw_ops = {
